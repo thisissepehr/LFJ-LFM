@@ -103,11 +103,11 @@ class Manager:
                 job = self.__findJobById(j)
                 t += job.getTime()
             paths.append(t)
-
+        
         return max(paths)
 
     def passTime(self, time):
-        for i in range(time):
+        for i in range(time+1):
             if self.__isThereBusyMachine():
                 for j in self.machines:
                     if (j.isBusy() and j.getTimeLeft() == 0):
@@ -120,7 +120,8 @@ class Manager:
                 self.__AssignTasks()
             else:
                 if len(self.getNotAssignedJobs()) == 0:
-                    print("Finished All Tasks. Total Time is: ", self.calcCPM())
+                    print("Finished All Tasks. Total Time is: ",i)
+                    print("CPM is: ",self.calcCPM())
                     break
                 else:
                     self.__AssignTasks()
