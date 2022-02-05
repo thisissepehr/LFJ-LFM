@@ -1,3 +1,5 @@
+# This class is used in the manager file
+
 class Machine:
     def __init__(self, id):
         self.__Mid = id
