@@ -44,7 +44,7 @@ class Manager:
         for i in jids:
             l1.append(self.__findJobById(i))
 
-        sortedJobs = sorted(l1, key=lambda x: len(x.getValidMachines()), reverse=False)
+        sortedJobs = sorted(l1, key=lambda x: (len(x.getValidMachines()),-x.getTime()), reverse=False)
         l2 = []
 
         for i in sortedJobs:
