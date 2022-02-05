@@ -1,3 +1,5 @@
+# This class is used in the manager file
+
 class Task:
     def __init__(self, id, time, MIDs):
         self.__Tid = id
